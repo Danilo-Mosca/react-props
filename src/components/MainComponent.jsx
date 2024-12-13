@@ -7,14 +7,17 @@ export default function MainComponent() {
     return (
         // Mappo props cities per popolare le card
         arrayPosts.map((post) => {
-            return <Card
-                id={post.id}
-                title={post.title}
-                image={post.image}
-                content={post.content}
-                tags={post.tags}
-                published={post.published}
-                key={post.id} />
+            // Ritorno la card solo se questa ha la chiave settata su true
+            if (post.published) {
+                return <Card
+                    id={post.id}
+                    title={post.title}
+                    image={post.image}
+                    content={post.content}
+                    tags={post.tags}
+                    published={post.published}
+                    key={post.id} />
+            }
         }
         )
     );
