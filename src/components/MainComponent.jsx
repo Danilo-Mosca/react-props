@@ -18,7 +18,6 @@ export default function MainComponent() {
                     tags={post.tags.map((tag) => {
                         return tag + " ";
                     })}
-                    published={post.published}
                     key={post.id} />
             }
         }

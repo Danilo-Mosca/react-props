@@ -7,8 +7,7 @@ function Card({
     title,
     image = "https://picsum.photos/600/400",
     content,
-    tags,
-    published }) {
+    tags }) {
     return (
         <div className={`${style.cards} card col-6 col-sm-6 col-md-3 col-lg-3 mb-3 mt-3 p-0 column-gap-3`}>
 
@@ -23,7 +22,12 @@ function Card({
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">{content}</p>
                 <p className="card-text">
-                    <span className={`${tagsColor(tags)}`}>{tags}</span>
+
+                    {/* Mappo l'array dei tag per assegnargli la classe CSS di colore giusto (attraverso la funzione tagsColor) in base al valore contenuto nella stringa (html, css, js, php) */}
+                    {tags.map((element) => {
+                        return <span key={element} className={`${tagsColor(element)}`}>{element}</span>
+                    })}
+
                 </p>
                 <a href="#" className={`btn btn-primary ${style.btncustom}`}>Leggi di più</a>
             </div>
@@ -31,24 +35,23 @@ function Card({
     );
 }
 
+// Funzione che restituisce la classe CSS giusta per ogni tag
 function tagsColor(tags) {
     let classe = "";
-    tags.forEach(element => {
-        switch (element) {
-            case "html ":
-                classe = style.colorHtml;
-                break;
-            case "css ":
-                classe = style.colorCss;
-                break;
-            case "js ":
-                classe = style.colorJs;
-                break;
-            case "php ":
-                classe = style.colorPhp;
-                break;
-        }
-    }); 
+    switch (tags) {
+        case "html ":
+            classe = style.colorHtml;
+            break;
+        case "css ":
+            classe = style.colorCss;
+            break;
+        case "js ":
+            classe = style.colorJs;
+            break;
+        case "php ":
+            classe = style.colorPhp;
+            break;
+    }
     return classe;
 }
 
