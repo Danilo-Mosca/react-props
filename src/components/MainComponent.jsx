@@ -14,7 +14,10 @@ export default function MainComponent() {
                     title={post.title}
                     image={post.image}
                     content={post.content}
-                    tags={post.tags}
+                    // Itero l'array di tag per dargli un piccolo spazio 
+                    tags={post.tags.map((tag) => {
+                        return tag + " ";
+                    })}
                     published={post.published}
                     key={post.id} />
             }
