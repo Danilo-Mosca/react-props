@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Card from './components/Card';
 import MainComponent from './components/MainComponent';
+import TagList from './components/TagList';
 
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
       <main className="container">
         <div className="row">
           <MainComponent />
+          <TagList />
         </div>
       </main>
       <Footer />

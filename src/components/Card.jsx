@@ -5,7 +5,7 @@ import style from "./card.module.css";
 function Card({
     id,
     title,
-    image = "https://picsum.photos/600/400",
+    image = "https://picsum.photos/640/480",
     content,
     tags }) {
     return (
@@ -14,7 +14,7 @@ function Card({
 
             {/* Operatore ternario che verifica la presenza dell'immagine e nel caso non fosse presente le assegna un'immagine casuale 600x400px dal sito https://picsum.photos/*/}
             {image === "" ?
-                <img src={"https://picsum.photos/600/400"} className={`card-img-top ${style["img-custom"]}`} alt={title} />
+                <img src={"https://picsum.photos/640/480"} className={`card-img-top ${style["img-custom"]}`} alt={title} />
                 : <img src={`${image}`} className={`card-img-top ${style["img-custom"]}`} alt={title} />}
 
 
@@ -39,16 +39,16 @@ function Card({
 function tagsColor(tags) {
     let classe = "";
     switch (tags) {
-        case "html ":
+        case "html":
             classe = style.colorHtml;
             break;
-        case "css ":
+        case "css":
             classe = style.colorCss;
             break;
-        case "js ":
+        case "js":
             classe = style.colorJs;
             break;
-        case "php ":
+        case "php":
             classe = style.colorPhp;
             break;
     }

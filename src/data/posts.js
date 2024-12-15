@@ -2,7 +2,7 @@ const posts = [
     {
         id: 1,
         title: "Titolo del Post",
-        image: '',
+        image: '../../img/Rome.jpg',
         content:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit animi unde quasi enim non esse ratione voluptas voluptate, officiis veritatis magni blanditiis possimus nobis cum id inventore corporis deserunt hic.",
         tags: ["html", "css"],

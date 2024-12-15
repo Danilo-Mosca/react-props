@@ -1,5 +1,5 @@
 import Card from "./Card";
-// Importo l'oggetto cities
+// Importo l'oggetto posts
 import posts from '../data/posts';
 
 export default function MainComponent() {
@@ -14,10 +14,7 @@ export default function MainComponent() {
                     title={post.title}
                     image={post.image}
                     content={post.content}
-                    // Itero l'array di tag per dargli un piccolo spazio 
-                    tags={post.tags.map((tag) => {
-                        return tag + " ";
-                    })}
+                    tags={post.tags}
                     key={post.id} />
             }
         }
