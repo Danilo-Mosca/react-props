@@ -56,3 +56,4 @@ function tagsColor(tags) {
 }
 
 export default Card;
+export {tagsColor};     // Esporto la funzione tagsColor, mi servirà nel componente TagList

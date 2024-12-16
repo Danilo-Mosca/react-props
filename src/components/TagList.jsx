@@ -2,7 +2,8 @@
 import posts from '../data/posts';
 // Importo i CSS Modules delle Card
 import style from "./card.module.css";
-
+// Importo solo la funzione tagsColor (mi servirà per colorare la lista) del componente Card
+import { tagsColor } from "./Card";
 export default function TagList() {
     // Mi ricavo tutti i valori di posts.tags
     const tagsFiltered = posts.map((post) => {
@@ -21,8 +22,15 @@ export default function TagList() {
 
     // Mi ricavo una collezione di valori unici filtrando l'array unireTags[] creando un oggetto Set che appunto permette di creare una collezione di valori univoci del valore che gli si passa
     unireTags = new Set(unireTags);
-    
+
     // console.log("Singoli post univoci e non ripetuti uniti su un unico array: ", unireTags);    //console log di prova
+
+
+    let valoreRestituito = [];
+    for (let i of unireTags) {
+        valoreRestituito.push(i);
+    }
+    // console.log(valoreRestituito);   //test
 
 
     // Parte html da ritornare
@@ -32,7 +40,11 @@ export default function TagList() {
                 <div className="card-body">
                     <h3>Lista dei tag presenti:</h3>
                     <ul>
-                        {<li>{unireTags}</li>}
+                        {valoreRestituito.map((element) => {
+                            return <li key={element} className={`${tagsColor(element)}`}>
+                                {element}
+                            </li>
+                        })}
                     </ul>
                 </div>
             </div>
